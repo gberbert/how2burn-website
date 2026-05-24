@@ -32,6 +32,24 @@
         @media (max-width: 768px) {
             .manual-content { padding: 2rem; }
         }
+
+        /* Success Modal Styles */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            display: none; align-items: center; justify-content: center; z-index: 9999;
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .modal-overlay.active { opacity: 1; }
+        .modal-box {
+            background: var(--bg-card); padding: 3rem; border-radius: 24px;
+            max-width: 400px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px); transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .modal-overlay.active .modal-box { transform: translateY(0); }
+        .modal-icon { font-size: 4rem; margin-bottom: 1rem; }
     </style>
 </head>
 <body>
@@ -119,7 +137,7 @@
             <hr style="margin: 4rem 0 2rem; border: none; border-top: 1px solid var(--border-color);">
             <h2>Have any questions?</h2>
             <p>Contact the developer directly.</p>
-            <form action="https://formsubmit.co/gustavo.berbert@gmail.com" method="POST" class="clean-form" style="margin-top: 1.5rem; max-width: 500px;">
+            <form id="supportForm" action="https://formsubmit.co/gustavo.berbert@gmail.com" method="POST" class="clean-form" style="margin-top: 1.5rem; max-width: 500px;">
                 <input type="hidden" name="_subject" value="New Support Message from How2Burn">
                 <input type="hidden" name="_template" value="table">
                 <input type="text" name="Name" placeholder="Your Name" required>
@@ -127,6 +145,58 @@
                 <textarea name="Message" placeholder="How can I help you?" required style="padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-color); background: var(--bg-card); font-family: inherit; font-size: 1.0625rem; outline: none; transition: border-color 0.2s; min-height: 120px; resize: vertical;"></textarea>
                 <button type="submit" class="primary-button" style="align-self: flex-start; margin-top: 0.5rem;">Send Message</button>
             </form>
+
+            <!-- Success Modal -->
+            <div class="modal-overlay" id="successModal">
+                <div class="modal-box">
+                    <div class="modal-icon">✅</div>
+                    <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Message Sent!</h3>
+                    <p style="margin-bottom: 2rem; font-size: 1rem; color: var(--text-secondary);">Thank you for contacting us. We will get back to you soon.</p>
+                    <button class="primary-button" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+
+            <script>
+                const form = document.getElementById('supportForm');
+                const modal = document.getElementById('successModal');
+                const submitBtn = form.querySelector('button[type="submit"]');
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+
+                    fetch("https://formsubmit.co/ajax/gustavo.berbert@gmail.com", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        submitBtn.textContent = 'Send Message';
+                        submitBtn.disabled = false;
+                        form.reset();
+                        modal.style.display = 'flex';
+                        setTimeout(() => modal.classList.add('active'), 10);
+                    })
+                    .catch(error => {
+                        submitBtn.textContent = 'Send Message';
+                        submitBtn.disabled = false;
+                        alert('Error sending message. Please try again.');
+                    });
+                });
+
+                function closeModal() {
+                    modal.classList.remove('active');
+                    setTimeout(() => { modal.style.display = 'none'; }, 300);
+                }
+            </script>
         </div>
     </main>
     <footer class="clean-footer">
