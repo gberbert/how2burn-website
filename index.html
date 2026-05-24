@@ -215,10 +215,64 @@
             <div class="cta-container">
                 <h2>The future of wellness is exclusive.</h2>
                 <p>Secure your spot on the waitlist for the upcoming How2Burn invitations.</p>
-                <form class="clean-form" onsubmit="alert('Successfully joined!'); return false;">
-                    <input type="email" placeholder="Your Apple ID email" required>
+                <form id="waitlistForm" action="https://formsubmit.co/gustavo.berbert@gmail.com" method="POST" class="clean-form">
+                    <input type="hidden" name="_subject" value="New Waitlist Signup for How2Burn">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="email" name="Email" placeholder="Your Apple ID email" required>
                     <button type="submit" class="primary-button">Join Waitlist</button>
                 </form>
+
+                <!-- Success Modal -->
+                <div class="modal-overlay" id="successModal">
+                    <div class="modal-box">
+                        <div class="modal-icon">✅</div>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">You're on the list!</h3>
+                        <p style="margin-bottom: 2rem; font-size: 1rem; color: var(--text-secondary);">Thank you for joining the waitlist. We'll notify you when a spot opens up.</p>
+                        <button class="primary-button" onclick="closeModal()">Close</button>
+                    </div>
+                </div>
+
+                <script>
+                    const waitlistForm = document.getElementById('waitlistForm');
+                    const waitlistModal = document.getElementById('successModal');
+                    const waitlistSubmitBtn = waitlistForm.querySelector('button[type="submit"]');
+
+                    waitlistForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        waitlistSubmitBtn.textContent = 'Joining...';
+                        waitlistSubmitBtn.disabled = true;
+
+                        const formData = new FormData(waitlistForm);
+                        const data = Object.fromEntries(formData.entries());
+
+                        fetch("https://formsubmit.co/ajax/gustavo.berbert@gmail.com", {
+                            method: "POST",
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            waitlistSubmitBtn.textContent = 'Join Waitlist';
+                            waitlistSubmitBtn.disabled = false;
+                            waitlistForm.reset();
+                            waitlistModal.style.display = 'flex';
+                            setTimeout(() => waitlistModal.classList.add('active'), 10);
+                        })
+                        .catch(error => {
+                            waitlistSubmitBtn.textContent = 'Join Waitlist';
+                            waitlistSubmitBtn.disabled = false;
+                            alert('Error joining waitlist. Please try again.');
+                        });
+                    });
+
+                    function closeModal() {
+                        waitlistModal.classList.remove('active');
+                        setTimeout(() => { waitlistModal.style.display = 'none'; }, 300);
+                    }
+                </script>
             </div>
         </section>
     </main>
