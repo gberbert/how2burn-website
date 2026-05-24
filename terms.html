@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use - How2Burn</title>
     <meta name="description" content="Terms of Use for How2Burn app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-content {
+            max-width: 860px;
+            margin: 10rem auto 4rem;
+            padding: 2rem;
+            color: var(--text-primary);
+        }
+        .legal-content h1 { margin-bottom: 2rem; }
+        .legal-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; }
+        .legal-content p, .legal-content li { font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem; }
+        .legal-content ul { padding-left: 2rem; margin-bottom: 2rem; }
+    </style>
 </head>
 <body>
-    <nav>
+    <nav class="clean-nav">
         <div class="nav-content">
-            <a href="index.html" class="logo">How2Burn</a>
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="How2Burn Logo"> How2Burn</a>
             <div class="nav-links">
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
+                <a href="index.html#dashboard">Dashboard</a>
+                <a href="index.html#tracking">Tracking</a>
+                <a href="support.html">Support</a>
+                <a href="index.html#settings">Settings</a>
             </div>
+            <a href="index.html#waitlist" class="nav-button">Waitlist</a>
         </div>
     </nav>
 
@@ -41,11 +59,17 @@
         <p>We reserve the right to modify or replace these Terms at any time. We will provide notice of any significant changes by updating the "Last updated" date of these Terms.</p>
     </main>
 
-    <footer>
-        <p>&copy; 2026 How2Burn. All rights reserved.</p>
-        <div style="margin-top: 10px;">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Use</a>
+    <footer class="clean-footer">
+        <div class="footer-top">
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="How2Burn Logo"> How2Burn</a>
+            <div class="footer-links-simple">
+                <a href="support.html">Technical Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 How2Burn. Designed with a focus on health.</p>
         </div>
     </footer>
 </body>

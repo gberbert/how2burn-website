@@ -1,35 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How2Burn - Your AI Fitness Companion</title>
-    <meta name="description" content="Discover a new way to understand your nutrition and health with How2Burn, powered by Apple HealthKit and advanced AI.">
+    <meta name="description" content="The smartest way to understand your body with Apple HealthKit and Advanced AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
+    <nav class="clean-nav">
         <div class="nav-content">
-            <a href="index.html" class="logo">How2Burn</a>
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="How2Burn Logo"> How2Burn</a>
             <div class="nav-links">
+                <a href="#dashboard">Dashboard</a>
+                <a href="#tracking">Tracking</a>
+                <a href="support.html">Support</a>
+                <a href="#settings">Settings</a>
+            </div>
+            <a href="#waitlist" class="nav-button">Waitlist</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text animate-up">
+                <h1>Your metabolism,<br>on your wrist.</h1>
+                <p>The only app that syncs your Apple Watch biometrics with Artificial Intelligence for precise, frictionless weight loss.</p>
+                <a href="#waitlist" class="primary-button">Request Access</a>
+            </div>
+            <div class="hero-image animate-up-delayed">
+                <!-- iPhone Mockup Skin -->
+                <div class="device-mockup iphone-mockup main-mockup iphone">
+                    <div class="dynamic-island"></div>
+                    <div class="screen carousel" id="hero-iphone-carousel">
+                        <img src="assets/hero-iphone.png" alt="How2Burn App on iPhone" class="active">
+                        <img src="assets/iphone-slide1.png" alt="How2Burn App Dashboard">
+                        <img src="assets/iphone-slide2.png" alt="How2Burn App Tracking">
+                    </div>
+                </div>
+                
+                <!-- Apple Watch Mockup Skin -->
+                <div class="device-mockup watch-mockup main-mockup watch">
+                    <div class="crown"></div>
+                    <div class="side-button"></div>
+                    <div class="screen carousel" id="hero-watch-carousel">
+                        <img src="assets/hero-watch.png" alt="How2Burn App on Apple Watch" class="active">
+                        <img src="assets/watch-slide1.png" alt="How2Burn App Apple Watch 1">
+                        <img src="assets/watch-slide2.png" alt="How2Burn App Apple Watch 2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACRO 1: Authentication -->
+        <section id="auth" class="macro-section parallax-bg-1">
+            <div class="content-wrapper glass-panel split-layout reveal">
+                <div class="text-block">
+                    <div class="icon-large">🔒</div>
+                    <h2>1. Authentication & Access Control</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">Data security and exclusive access.</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>Secure Authentication</h4>
+                            <p>Native login and account creation managed with state-of-the-art security via Firebase Auth.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-block">
+                    <div class="device-mockup iphone-mockup showcase-mockup">
+                        <div class="dynamic-island"></div>
+                        <div class="screen carousel" id="carousel-auth" data-folder="assets/auth">
+                            <!-- Injected dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACRO 2: Dashboard -->
+        <section id="dashboard" class="macro-section parallax-bg-1">
+            <div class="content-wrapper glass-panel split-layout reverse reveal">
+                <div class="text-block">
+                    <h2>2. Main Dashboard</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">Centralizing your daily metrics and metabolic state.</p>
+                    <ul class="text-list">
+                        <li><strong>Caloric Balance:</strong> Real-time display of calories consumed versus burned throughout the day.</li>
+                        <li><strong>Macronutrient Control:</strong> Precise progress bars for Protein, Carbohydrate, and Fat intake.</li>
+                        <li><strong>WHO Guidelines Monitoring:</strong> Proactive visual alerts for Sugar, Cholesterol, Processed Meats, and Additives intake.</li>
+                        <li><strong>Daily Deficit/Surplus:</strong> Dynamic calculation of what's left to hit your exact weight loss goal.</li>
+                        <li><strong>Automatic Syncing:</strong> Energy expenditure summary (Basal + Active) instantly integrated with Apple HealthKit.</li>
+                    </ul>
+                </div>
+                <div class="image-block">
+                    <div class="device-mockup iphone-mockup showcase-mockup">
+                        <div class="dynamic-island"></div>
+                        <div class="screen carousel" id="carousel-dashboard" data-folder="assets/dashboard">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACRO 3: Tracking -->
+        <section id="tracking" class="macro-section parallax-bg-2">
+            <div class="content-wrapper glass-panel split-layout reveal">
+                <div class="text-block">
+                    <h2>3. Logging & Tracking</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">AI-optimized tools for zero-friction daily food logging.</p>
+                    <ul class="text-list">
+                        <li><strong>Quick Launch:</strong> Global action button (+) accessible in milliseconds from any screen.</li>
+                        <li><strong>Camera Recognition (Vision):</strong> Snap a picture of your plate and let Gemini Vision automatically calculate portions and macros.</li>
+                        <li><strong>Smart Voice Input:</strong> Just dictate your meal and the AI transforms natural speech into structured nutritional tables.</li>
+                        <li><strong>Barcode Scanner:</strong> Ultra-fast integrated scanner for packaged foods.</li>
+                        <li><strong>Biometric Workouts:</strong> AI cross-references your body data with the workout description to estimate caloric burn with mathematical precision.</li>
+                    </ul>
+                </div>
+                <div class="image-block">
+                    <div class="device-mockup iphone-mockup showcase-mockup">
+                        <div class="dynamic-island"></div>
+                        <div class="screen carousel" id="carousel-tracking" data-folder="assets/tracking">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACRO 4: Journeys -->
+        <section id="journeys" class="macro-section parallax-bg-2">
+            <div class="content-wrapper glass-panel split-layout reverse reveal">
+                <div class="text-block">
+                    <div class="icon-large">⏳</div>
+                    <h2>4. Journeys (Gamification & Progression)</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">Continuous sprints to track your long-term weight loss.</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>Active Cycle & Real Burn</h4>
+                            <p>Timer showing days and hours of the active sprint. Track Theoretical Fat Burn vs. Real Weight Loss on the scale, with precise evolution and deficit charts.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>History & Risk Metrics</h4>
+                            <p>Storage of past cycles with impressive aggregated reports (e.g., total sugar consumed in 30 days). Cards that evaluate your health risk based on continuous ultra-processed food consumption.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-block">
+                    <div class="device-mockup iphone-mockup showcase-mockup">
+                        <div class="dynamic-island"></div>
+                        <div class="screen carousel" id="carousel-journeys" data-folder="assets/journeys">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACRO 5: Settings -->
+        <section id="settings" class="macro-section parallax-bg-3">
+            <div class="content-wrapper glass-panel split-layout reveal">
+                <div class="text-block">
+                    <div class="icon-large">⚙️</div>
+                    <h2>5. Settings & Biometric Profile</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">The most advanced hyper-personalization of your physiological routine.</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>Integrated BMR</h4>
+                            <p>Native Basal Metabolic Rate calculator using the Mifflin-St Jeor equation based on your sex, weight, height, and age.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Weight Loss Goals</h4>
+                            <p>Set exactly how many pounds you want to lose per month, and the system will dynamically adjust your daily deficit and protein multiplier.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Customizable Limits</h4>
+                            <p>Absolute control to redefine tolerance margins for Sugar, Cholesterol, and Processed Meats according to medical recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-block">
+                    <div class="device-mockup iphone-mockup showcase-mockup">
+                        <div class="dynamic-island"></div>
+                        <div class="screen carousel" id="carousel-settings" data-folder="assets/settings">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACRO 6: Technology -->
+        <section id="tech" class="macro-section parallax-bg-3">
+            <div class="content-wrapper glass-panel split-layout reverse reveal">
+                <div class="text-block">
+                    <h2>6. Core Technology & Underlying Integrations</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">The high-performance engine that powers the health ecosystem.</p>
+                    <ul class="text-list">
+                        <li><strong>Native HealthKit:</strong> Native bidirectional communication with Apple's Health app to read and write weight, basal energy, and active energy.</li>
+                        <li><strong>Gemini 3.1 Flash Lite:</strong> The best and fastest generative AI emulating the app's nutritionist brain, abstracting complexity in conversations and images.</li>
+                        <li><strong>Firebase Firestore Backend:</strong> Serverless Realtime synchronization. Actions performed on your Watch instantly appear on your iPhone without manual refresh.</li>
+                    </ul>
+                </div>
+                <div class="image-block">
+                    <div class="device-mockup watch-mockup showcase-watch">
+                        <div class="crown"></div>
+                        <div class="side-button"></div>
+                        <div class="screen carousel" id="carousel-tech" data-folder="assets/tech">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="waitlist" class="cta-section alt-bg">
+            <div class="cta-container">
+                <h2>The future of wellness is exclusive.</h2>
+                <p>Secure your spot on the waitlist for the upcoming How2Burn invitations.</p>
+                <form class="clean-form" onsubmit="alert('Successfully joined!'); return false;">
+                    <input type="email" placeholder="Your Apple ID email" required>
+                    <button type="submit" class="primary-button">Join Waitlist</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="clean-footer">
+        <div class="footer-top">
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="How2Burn Logo"> How2Burn</a>
+            <div class="footer-links-simple">
+                <a href="support.html">Technical Support</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="terms.html">Terms</a>
             </div>
         </div>
-    </nav>
-
-    <main class="hero animate-up">
-        <h1>Welcome to How2Burn</h1>
-        <h2>Your AI-powered journey to a healthier lifestyle. Seamlessly integrated with Apple Health.</h2>
-        <a href="#" class="cta-button" onclick="alert('Available soon on the App Store!'); return false;">Download on the App Store</a>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 How2Burn. All rights reserved.</p>
-        <div style="margin-top: 10px;">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Use</a>
+        <div class="footer-bottom">
+            <p>&copy; 2026 How2Burn. Designed with a focus on health.</p>
         </div>
     </footer>
+
+    <script>
+        async function loadImagesDynamically(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+            
+            const folderPath = carousel.getAttribute('data-folder');
+            if (!folderPath) return;
+
+            let index = 1;
+            let keepTrying = true;
+            let loadedImages = 0;
+
+            while (keepTrying) {
+                const imgPath = `${folderPath}/${index}.png`;
+                
+                try {
+                    await new Promise((resolve, reject) => {
+                        const img = new Image();
+                        img.onload = () => {
+                            img.alt = `App Slide ${index}`;
+                            if (loadedImages === 0) {
+                                img.classList.add('active');
+                            }
+                            carousel.appendChild(img);
+                            loadedImages++;
+                            resolve();
+                        };
+                        img.onerror = () => {
+                            keepTrying = false;
+                            reject();
+                        };
+                        img.src = imgPath;
+                    });
+                    index++;
+                } catch (e) {
+                    break;
+                }
+            }
+
+            if (loadedImages > 1) {
+                startCarousel(carousel);
+            }
+        }
+
+        function startCarousel(carousel) {
+            const images = carousel.querySelectorAll('img');
+            let currentIndex = 0;
+            const interval = Math.floor(Math.random() * (4500 - 3500 + 1) + 3500);
+            
+            setInterval(() => {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }, interval);
+        }
+
+        function setupStaticCarousel(carouselId, interval) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+            const images = carousel.querySelectorAll('img');
+            if (images.length <= 1) return;
+            
+            let currentIndex = 0;
+            setInterval(() => {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }, interval);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setupStaticCarousel('hero-iphone-carousel', 3500);
+            setupStaticCarousel('hero-watch-carousel', 4200);
+
+            const dynamicCarousels = [
+                'carousel-auth', 
+                'carousel-dashboard', 
+                'carousel-tracking', 
+                'carousel-journeys', 
+                'carousel-settings', 
+                'carousel-tech'
+            ];
+            
+            dynamicCarousels.forEach(id => loadImagesDynamically(id));
+
+            // Scroll Reveal Animations
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            });
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+    </script>
 </body>
 </html>
