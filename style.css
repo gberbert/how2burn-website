@@ -625,16 +625,21 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .glass-panel {
         padding: 2rem;
     }
-    
+}
+
+/* Hard fix for iOS Safari Parallax Bug */
+@media (max-width: 1024px), (pointer: coarse) {
     .hero,
     .parallax-bg-1, 
     .parallax-bg-2, 
     .parallax-bg-3 {
         background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center top !important;
     }
 }
 
