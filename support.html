@@ -119,7 +119,9 @@
             <hr style="margin: 4rem 0 2rem; border: none; border-top: 1px solid var(--border-color);">
             <h2>Have any questions?</h2>
             <p>Contact the developer directly.</p>
-            <form action="mailto:gustavo.berbert@gmail.com" method="post" enctype="text/plain" class="clean-form" style="margin-top: 1.5rem; max-width: 500px;">
+            <form action="https://formsubmit.co/gustavo.berbert@gmail.com" method="POST" class="clean-form" style="margin-top: 1.5rem; max-width: 500px;">
+                <input type="hidden" name="_subject" value="New Support Message from How2Burn">
+                <input type="hidden" name="_template" value="table">
                 <input type="text" name="Name" placeholder="Your Name" required>
                 <input type="email" name="Email" placeholder="Your Email" required>
                 <textarea name="Message" placeholder="How can I help you?" required style="padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-color); background: var(--bg-card); font-family: inherit; font-size: 1.0625rem; outline: none; transition: border-color 0.2s; min-height: 120px; resize: vertical;"></textarea>
