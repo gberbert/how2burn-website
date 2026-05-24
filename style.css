@@ -629,6 +629,13 @@ p {
     .glass-panel {
         padding: 2rem;
     }
+    
+    .hero,
+    .parallax-bg-1, 
+    .parallax-bg-2, 
+    .parallax-bg-3 {
+        background-attachment: scroll !important;
+    }
 }
 
 .macro-section {
