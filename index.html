@@ -35,7 +35,7 @@
                 <a href="support.html">Support</a>
                 <a href="#settings">Settings</a>
             </div>
-            <a href="#waitlist" class="nav-button">Waitlist</a>
+            <a href="/app" class="nav-button">Download</a>
         </div>
     </nav>
 
@@ -44,7 +44,15 @@
             <div class="hero-text animate-up">
                 <h1>Your metabolism,<br>on your wrist.</h1>
                 <p>The only app that syncs your Apple Watch biometrics with Artificial Intelligence for precise, frictionless weight loss.</p>
-                <a href="#waitlist" class="primary-button">Request Access</a>
+                <a href="/app" class="app-store-button">
+                    <svg viewBox="0 0 384 512" width="24" height="24" fill="currentColor">
+                        <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-48.7-22.7-77.9-22-38 1-72.9 22.2-92.4 55.8-39.7 70-10.2 172.9 27.9 228.7 19.4 27.9 41.7 59.2 71.3 58.1 28.5-1.1 39.6-18.4 74.3-18.4 34.3 0 44.6 18.4 74.7 17.8 30.7-.6 50.4-28.5 69.7-56.1 22.3-32.2 31.3-63.3 31.7-64.9-1.1-.3-60.8-23.4-61-91.4zM249.4 96.2c16.2-20 27.2-47.8 24.2-75.6-23.8 1-52.7 16-69.8 36.2-15.4 18-28.8 46.1-25.1 73.4 26.5 2 54.3-14 70.7-34z"/>
+                    </svg>
+                    <div class="btn-text">
+                        <span class="btn-subtext">Download on the</span>
+                        <span class="btn-maintext">App Store</span>
+                    </div>
+                </a>
             </div>
             <div class="hero-image animate-up-delayed">
                 <!-- iPhone Mockup Skin -->
@@ -228,66 +236,19 @@
 
         <section id="waitlist" class="cta-section alt-bg">
             <div class="cta-container">
-                <h2>The future of wellness is exclusive.</h2>
-                <p>Secure your spot on the waitlist for the upcoming How2Burn invitations.</p>
-                <form id="waitlistForm" action="https://formsubmit.co/gustavo.berbert@gmail.com" method="POST" class="clean-form">
-                    <input type="hidden" name="_subject" value="New Waitlist Signup for How2Burn">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="email" name="Email" placeholder="Your Apple ID email" required>
-                    <button type="submit" class="primary-button">Join Waitlist</button>
-                </form>
-
-                <!-- Success Modal -->
-                <div class="modal-overlay" id="successModal">
-                    <div class="modal-box">
-                        <div class="modal-icon">✅</div>
-                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">You're on the list!</h3>
-                        <p style="margin-bottom: 2rem; font-size: 1rem; color: var(--text-secondary);">Thank you for joining the waitlist. We'll notify you when a spot opens up.</p>
-                        <button class="primary-button" onclick="closeModal()">Close</button>
-                    </div>
+                <h2>Ready to transform your metabolism?</h2>
+                <p>Download How2Burn AI now on the App Store and start tracking your fitness with frictionless intelligence.</p>
+                <div style="margin-top: 2.5rem;">
+                    <a href="/app" class="app-store-button">
+                        <svg viewBox="0 0 384 512" width="24" height="24" fill="currentColor">
+                            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-48.7-22.7-77.9-22-38 1-72.9 22.2-92.4 55.8-39.7 70-10.2 172.9 27.9 228.7 19.4 27.9 41.7 59.2 71.3 58.1 28.5-1.1 39.6-18.4 74.3-18.4 34.3 0 44.6 18.4 74.7 17.8 30.7-.6 50.4-28.5 69.7-56.1 22.3-32.2 31.3-63.3 31.7-64.9-1.1-.3-60.8-23.4-61-91.4zM249.4 96.2c16.2-20 27.2-47.8 24.2-75.6-23.8 1-52.7 16-69.8 36.2-15.4 18-28.8 46.1-25.1 73.4 26.5 2 54.3-14 70.7-34z"/>
+                        </svg>
+                        <div class="btn-text">
+                            <span class="btn-subtext">Download on the</span>
+                            <span class="btn-maintext">App Store</span>
+                        </div>
+                    </a>
                 </div>
-
-                <script>
-                    const waitlistForm = document.getElementById('waitlistForm');
-                    const waitlistModal = document.getElementById('successModal');
-                    const waitlistSubmitBtn = waitlistForm.querySelector('button[type="submit"]');
-
-                    waitlistForm.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        waitlistSubmitBtn.textContent = 'Joining...';
-                        waitlistSubmitBtn.disabled = true;
-
-                        const formData = new FormData(waitlistForm);
-                        const data = Object.fromEntries(formData.entries());
-
-                        fetch("https://formsubmit.co/ajax/gustavo.berbert@gmail.com", {
-                            method: "POST",
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify(data)
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            waitlistSubmitBtn.textContent = 'Join Waitlist';
-                            waitlistSubmitBtn.disabled = false;
-                            waitlistForm.reset();
-                            waitlistModal.style.display = 'flex';
-                            setTimeout(() => waitlistModal.classList.add('active'), 10);
-                        })
-                        .catch(error => {
-                            waitlistSubmitBtn.textContent = 'Join Waitlist';
-                            waitlistSubmitBtn.disabled = false;
-                            alert('Error joining waitlist. Please try again.');
-                        });
-                    });
-
-                    function closeModal() {
-                        waitlistModal.classList.remove('active');
-                        setTimeout(() => { waitlistModal.style.display = 'none'; }, 300);
-                    }
-                </script>
             </div>
         </section>
     </main>
