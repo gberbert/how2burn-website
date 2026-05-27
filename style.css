@@ -710,3 +710,174 @@ p {
     font-weight: 600;
     letter-spacing: -0.01em;
 }
+
+/* FAQ Section Styling */
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: saturate(180%) blur(25px);
+    -webkit-backdrop-filter: saturate(180%) blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 113, 227, 0.2);
+}
+
+.faq-question {
+    padding: 1.5rem 2rem;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    gap: 1rem;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+    padding: 0 2rem;
+}
+
+.faq-answer p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding-bottom: 0px;
+}
+
+.faq-icon {
+    font-size: 1.2rem;
+    color: var(--accent);
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* -------------------------------------
+   Premium Ambient Glow & Micro-Animations 
+   ------------------------------------- */
+
+/* Contain glow elements within sections */
+.macro-section {
+    background-color: transparent !important;
+    border-top: none;
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Radial Gradient Ambient Circles */
+.ambient-glow-circle {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.16;
+    z-index: 0;
+    pointer-events: none;
+    transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ambient-glow-circle.circle-cyan {
+    background: radial-gradient(circle, #00d2ff 0%, rgba(0, 113, 227, 0) 70%);
+}
+
+.ambient-glow-circle.circle-orange {
+    background: radial-gradient(circle, #ff5e3a 0%, rgba(255, 45, 85, 0) 70%);
+}
+
+.ambient-glow-circle.circle-purple {
+    background: radial-gradient(circle, #b833ff 0%, rgba(120, 0, 255, 0) 70%);
+}
+
+/* Subtle shift of background colors on section hover */
+.macro-section:hover .ambient-glow-circle {
+    transform: scale(1.15) translate(15px, -15px);
+}
+
+/* Glass panel enhancements */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: saturate(180%) blur(32px);
+    -webkit-backdrop-filter: saturate(180%) blur(32px);
+    border-radius: var(--radius-bento);
+    padding: 4rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    position: relative;
+    z-index: 1; /* Sit above the blurred backgrounds */
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* App Store Download Button Micro-Animations */
+.app-store-button {
+    transition: background-color 0.25s, border-color 0.25s, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease !important;
+}
+
+.app-store-button:hover {
+    background-color: #0b0b0c !important;
+    border-color: rgba(0, 113, 227, 0.4) !important;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 113, 227, 0.35) !important;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 113, 227, 0.4);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
