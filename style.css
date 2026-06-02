@@ -211,13 +211,13 @@ p {
 
 .iphone-mockup .dynamic-island {
     position: absolute;
-    top: calc(10px * var(--scale));
+    top: calc(8px * var(--scale));
     left: 50%;
     transform: translateX(-50%);
-    width: calc(110px * var(--scale));
-    height: calc(32px * var(--scale));
+    width: calc(85px * var(--scale));
+    height: calc(24px * var(--scale));
     background-color: #000;
-    border-radius: calc(20px * var(--scale));
+    border-radius: calc(12px * var(--scale));
     z-index: 10;
 }
 
@@ -571,11 +571,22 @@ p {
         flex-direction: column;
         align-items: stretch;
         gap: 3rem;
-        text-align: left;
+        text-align: center;
     }
     
-    .text-list li {
+    .text-list {
+        display: inline-block;
         text-align: left;
+    }
+
+    .macro-section .subtitle {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .feature-grid {
+        text-align: center;
     }
 }
 

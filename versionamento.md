@@ -1,5 +1,11 @@
 # Controle de Versão - Website
 
+## v.1.0.7 (02 de Junho de 2026)
+- Harmonização extrema do layout Mobile: todos os parágrafos de subtítulo, listas (bullets) e textos internos dos cartões (`.feature-item`) foram centralizados matematicamente para formarem um design 100% simétrico e balanceado, atendendo ao perfeccionismo do design.
+
+## v.1.0.6 (02 de Junho de 2026)
+- Redimensionamento e otimização geométrica da "Dynamic Island" (câmera frontal do iPhone). A altura e largura foram encolhidas para refletirem as proporções físicas reais de um iPhone 14/15 Pro, evitando que a ilha bloqueie o título e os botões superiores ("Journey Details" e "Close") nas screenshots do app.
+
 ## v.1.0.5 (02 de Junho de 2026)
 - Correção de alinhamento visual em dispositivos móveis. A seção de conteúdo agora herda alinhamento à esquerda (`text-align: left; align-items: stretch;`) para remover a descentralização quebrada (h2 e ícones centralizados vs. cards alinhados à esquerda).
 - Refatoração profunda na estética dos emojis (`.icon-large`), inserindo-os dentro de elegantes contêineres Glassmorphism, erradicando a aparência "crua" e não polida dos ícones soltos.
