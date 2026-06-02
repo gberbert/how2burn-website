@@ -164,7 +164,6 @@ p {
 .device-mockup {
     position: relative;
     background-color: #000;
-    container-type: inline-size;
 }
 
 .device-mockup .screen {
@@ -199,47 +198,49 @@ p {
 
 /* iPhone Skin */
 .iphone-mockup {
-    border-radius: 16.66cqi;
-    border: 4.66cqi solid #111;
+    --scale: 1;
+    border-radius: calc(50px * var(--scale));
+    border: calc(14px * var(--scale)) solid #111;
     box-shadow: 0 0 0 2px #d1d1d6, 0 30px 60px rgba(0,0,0,0.15);
 }
 
 .iphone-mockup .screen {
-    border-radius: 12cqi;
+    border-radius: calc(36px * var(--scale));
 }
 
 .iphone-mockup .dynamic-island {
     position: absolute;
-    top: 3.33cqi;
+    top: calc(10px * var(--scale));
     left: 50%;
     transform: translateX(-50%);
-    width: 36.66cqi;
-    height: 10.66cqi;
+    width: calc(110px * var(--scale));
+    height: calc(32px * var(--scale));
     background-color: #000;
-    border-radius: 6.66cqi;
+    border-radius: calc(20px * var(--scale));
     z-index: 10;
 }
 
 /* Apple Watch Skin */
 .watch-mockup {
-    border-radius: 23cqi;
-    border: 6cqi solid #1a1a1a;
+    --scale: 1;
+    border-radius: calc(46px * var(--scale));
+    border: calc(12px * var(--scale)) solid #1a1a1a;
     box-shadow: 0 0 0 2px #a8a8b0, 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .watch-mockup .screen {
-    border-radius: 17cqi;
+    border-radius: calc(34px * var(--scale));
 }
 
 .watch-mockup .crown {
     position: absolute;
-    right: -8cqi;
+    right: calc(-16px * var(--scale));
     top: 25%;
-    width: 3cqi;
-    height: 20cqi;
+    width: calc(6px * var(--scale));
+    height: calc(40px * var(--scale));
     background: linear-gradient(to bottom, #d1d1d6, #7a7a7e, #d1d1d6);
-    border-top-right-radius: 2cqi;
-    border-bottom-right-radius: 2cqi;
+    border-top-right-radius: calc(4px * var(--scale));
+    border-bottom-right-radius: calc(4px * var(--scale));
     border: 1px solid #666;
     border-left: none;
     box-shadow: 2px 0 5px rgba(0,0,0,0.3);
@@ -248,13 +249,13 @@ p {
 
 .watch-mockup .side-button {
     position: absolute;
-    right: -7cqi;
+    right: calc(-14px * var(--scale));
     top: 55%;
-    width: 2cqi;
-    height: 30cqi;
+    width: calc(4px * var(--scale));
+    height: calc(60px * var(--scale));
     background: #7a7a7e;
-    border-top-right-radius: 1.5cqi;
-    border-bottom-right-radius: 1.5cqi;
+    border-top-right-radius: calc(3px * var(--scale));
+    border-bottom-right-radius: calc(3px * var(--scale));
     border: 1px solid #555;
     border-left: none;
     z-index: -1;
@@ -315,6 +316,7 @@ p {
 }
 
 .main-mockup.iphone {
+    --scale: 1.066;
     position: absolute;
     bottom: -100px;
     width: 100%;
@@ -325,6 +327,7 @@ p {
 }
 
 .main-mockup.watch {
+    --scale: 0.714;
     position: absolute;
     width: 100%;
     max-width: 200px;
@@ -451,6 +454,7 @@ p {
 
 /* Specific Mockups for Sections */
 .showcase-mockup {
+    --scale: 1;
     width: 100%;
     max-width: 300px;
     aspect-ratio: 300 / 610;
@@ -458,6 +462,7 @@ p {
 }
 
 .showcase-watch {
+    --scale: 1;
     width: 100%;
     max-width: 280px;
     aspect-ratio: 280 / 340;
@@ -595,19 +600,23 @@ p {
     
     .main-mockup.iphone {
         max-width: 220px;
+        --scale: 0.733;
     }
     
     .main-mockup.watch {
         max-width: 140px;
+        --scale: 0.5;
         transform: translateX(-80%);
     }
     
     .showcase-mockup {
         max-width: 250px;
+        --scale: 0.833;
     }
 
     .showcase-watch {
         max-width: 240px;
+        --scale: 0.857;
     }
 }
 
