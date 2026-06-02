@@ -164,6 +164,7 @@ p {
 .device-mockup {
     position: relative;
     background-color: #000;
+    container-type: inline-size;
 }
 
 .device-mockup .screen {
@@ -198,47 +199,47 @@ p {
 
 /* iPhone Skin */
 .iphone-mockup {
-    border-radius: 50px;
-    border: 14px solid #111;
+    border-radius: 16.66cqi;
+    border: 4.66cqi solid #111;
     box-shadow: 0 0 0 2px #d1d1d6, 0 30px 60px rgba(0,0,0,0.15);
 }
 
 .iphone-mockup .screen {
-    border-radius: 36px;
+    border-radius: 12cqi;
 }
 
 .iphone-mockup .dynamic-island {
     position: absolute;
-    top: 10px;
+    top: 3.33cqi;
     left: 50%;
     transform: translateX(-50%);
-    width: 110px;
-    height: 32px;
+    width: 36.66cqi;
+    height: 10.66cqi;
     background-color: #000;
-    border-radius: 20px;
+    border-radius: 6.66cqi;
     z-index: 10;
 }
 
 /* Apple Watch Skin */
 .watch-mockup {
-    border-radius: 46px;
-    border: 12px solid #1a1a1a;
+    border-radius: 23cqi;
+    border: 6cqi solid #1a1a1a;
     box-shadow: 0 0 0 2px #a8a8b0, 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .watch-mockup .screen {
-    border-radius: 34px;
+    border-radius: 17cqi;
 }
 
 .watch-mockup .crown {
     position: absolute;
-    right: -16px;
+    right: -8cqi;
     top: 25%;
-    width: 6px;
-    height: 40px;
+    width: 3cqi;
+    height: 20cqi;
     background: linear-gradient(to bottom, #d1d1d6, #7a7a7e, #d1d1d6);
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 2cqi;
+    border-bottom-right-radius: 2cqi;
     border: 1px solid #666;
     border-left: none;
     box-shadow: 2px 0 5px rgba(0,0,0,0.3);
@@ -247,13 +248,13 @@ p {
 
 .watch-mockup .side-button {
     position: absolute;
-    right: -14px;
+    right: -7cqi;
     top: 55%;
-    width: 4px;
-    height: 60px;
+    width: 2cqi;
+    height: 30cqi;
     background: #7a7a7e;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: 1.5cqi;
+    border-bottom-right-radius: 1.5cqi;
     border: 1px solid #555;
     border-left: none;
     z-index: -1;
