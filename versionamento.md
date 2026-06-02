@@ -1,5 +1,9 @@
 # Controle de Versão - Website
 
+## v.1.0.5 (02 de Junho de 2026)
+- Correção de alinhamento visual em dispositivos móveis. A seção de conteúdo agora herda alinhamento à esquerda (`text-align: left; align-items: stretch;`) para remover a descentralização quebrada (h2 e ícones centralizados vs. cards alinhados à esquerda).
+- Refatoração profunda na estética dos emojis (`.icon-large`), inserindo-os dentro de elegantes contêineres Glassmorphism, erradicando a aparência "crua" e não polida dos ícones soltos.
+
 ## v.1.0.4 (02 de Junho de 2026)
 - Atualização explícita de versão (Hotfix da tela preta na v.1.0.3). O usuário estava visualizando a v.1.0.3 cacheada sem o hotfix.
 

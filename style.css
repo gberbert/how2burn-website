@@ -372,8 +372,17 @@ p {
 }
 
 .icon-large {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    width: 72px;
+    height: 72px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
 
 /* Grid within Macro Sections */
@@ -560,8 +569,9 @@ p {
     .split-layout .content-wrapper,
     .split-layout.reverse .content-wrapper {
         flex-direction: column;
+        align-items: stretch;
         gap: 3rem;
-        text-align: center;
+        text-align: left;
     }
     
     .text-list li {
