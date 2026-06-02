@@ -1,5 +1,8 @@
 # Controle de Versão - Website
 
+## v.1.0.8 (02 de Junho de 2026)
+- Resolução do problema de orfandade do CSS Grid nos Tópicos 4 e 5. A `.feature-grid` foi migrada de CSS Grid para Flexbox, garantindo que quando as colunas quebrarem em múltiplas linhas, os itens restantes se expandam simetricamente ou centralizem, eliminando o efeito indesejado de alinhamento desproporcional à esquerda (descentralizado) em telas médias (Tablets) ou Desktop.
+
 ## v.1.0.7 (02 de Junho de 2026)
 - Harmonização extrema do layout Mobile: todos os parágrafos de subtítulo, listas (bullets) e textos internos dos cartões (`.feature-item`) foram centralizados matematicamente para formarem um design 100% simétrico e balanceado, atendendo ao perfeccionismo do design.
 
