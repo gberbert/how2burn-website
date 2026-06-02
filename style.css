@@ -316,15 +316,19 @@ p {
 .main-mockup.iphone {
     position: absolute;
     bottom: -100px;
-    width: 320px;
-    height: 650px;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 320 / 650;
+    height: auto;
     z-index: 2;
 }
 
 .main-mockup.watch {
     position: absolute;
-    width: 200px;
-    height: 250px;
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 200 / 250;
+    height: auto;
     z-index: 3;
     left: 50%;
     transform: translateX(-190%);
@@ -446,13 +450,17 @@ p {
 
 /* Specific Mockups for Sections */
 .showcase-mockup {
-    width: 300px;
-    height: 610px;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 300 / 610;
+    height: auto;
 }
 
 .showcase-watch {
-    width: 280px;
-    height: 340px;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 280 / 340;
+    height: auto;
 }
 
 /* CTA Section */
@@ -585,17 +593,20 @@ p {
     }
     
     .main-mockup.iphone {
-        height: 450px;
+        max-width: 220px;
     }
     
     .main-mockup.watch {
-        height: 250px;
+        max-width: 140px;
         transform: translateX(-80%);
     }
     
     .showcase-mockup {
-        width: 250px;
-        height: 510px;
+        max-width: 250px;
+    }
+
+    .showcase-watch {
+        max-width: 240px;
     }
 }
 
