@@ -1,5 +1,8 @@
 # Controle de Versão - Website
 
+## v.1.0.4 (02 de Junho de 2026)
+- Atualização explícita de versão (Hotfix da tela preta na v.1.0.3). O usuário estava visualizando a v.1.0.3 cacheada sem o hotfix.
+
 ## v.1.0.3 (02 de Junho de 2026)
 - Resolução do letterboxing no Safari Mobile. Transformação da `div.screen` de position relative para absoluta a fim de forçar o motor do WebKit a resolver a altura do `aspect-ratio` corretamente para o `object-fit: cover` das imagens internas.
 - Alinhamento de todas as imagens com `object-position: top center` para impedir cortes na Status Bar nativa do iOS contida nas capturas.
