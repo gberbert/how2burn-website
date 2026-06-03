@@ -1067,6 +1067,7 @@ p {
         transition: right 0.3s ease;
         z-index: 1000;
         display: flex !important;
+        overflow-y: auto;
     }
 
     .nav-links.active {
