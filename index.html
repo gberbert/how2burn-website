@@ -80,26 +80,34 @@
             </div>
         </section>
 
-        <!-- MACRO 1: Authentication -->
-        <section id="auth" class="macro-section parallax-bg-1">
+        <!-- MACRO 1: Dashboard -->
+        <section id="dashboard" class="macro-section parallax-bg-1">
             <div class="ambient-glow-circle circle-cyan" style="top: 10%; left: 10%;"></div>
             <div class="ambient-glow-circle circle-orange" style="bottom: 10%; right: 10%;"></div>
             <div class="content-wrapper glass-panel split-layout reveal">
                 <div class="text-block">
-                    <div class="icon-large">🔒</div>
-                    <h2>1. Authentication & Access Control</h2>
-                    <p class="subtitle" style="margin-left: 0; text-align: left;">Data security and exclusive access.</p>
+                    <div class="icon-large">📊</div>
+                    <h2>1. Dynamic Dashboard</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">Real-time view of Deficit, Macros, Health Indices, and Temporal Groupings.</p>
                     <div class="feature-grid">
                         <div class="feature-item">
-                            <h4>Secure Authentication</h4>
-                            <p>Native login and account creation managed with state-of-the-art security via Firebase Auth.</p>
+                            <h4>Date Range Groupings</h4>
+                            <p>Aggregated bar chart transmuting daily data when looking at weekly or monthly periods. Includes dynamic tooltips with HRV cross-reference.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Critical Substances Alert</h4>
+                            <p>Proactive alerts for high Sugar or Cholesterol intake, detailing exactly which foods were the top offenders for the day.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Fat Loss Readiness</h4>
+                            <p>An intelligent Burn Index (0-100) based on your sleep quality, HRV (stress), and steps taken.</p>
                         </div>
                     </div>
                 </div>
                 <div class="image-block">
                     <div class="device-mockup iphone-mockup showcase-mockup">
                         <div class="dynamic-island"></div>
-                        <div class="screen carousel" id="carousel-auth" data-folder="assets/auth">
+                        <div class="screen carousel" id="carousel-dashboard" data-folder="assets/painel">
                             <!-- Injected dynamically -->
                         </div>
                     </div>
@@ -107,141 +115,134 @@
             </div>
         </section>
 
-        <!-- MACRO 2: Dashboard -->
-        <section id="dashboard" class="macro-section parallax-bg-1">
+        <!-- MACRO 2: Dr. Chama -->
+        <section id="coach" class="macro-section parallax-bg-1">
             <div class="ambient-glow-circle circle-purple" style="top: 15%; right: 15%;"></div>
             <div class="ambient-glow-circle circle-cyan" style="bottom: 15%; left: 15%;"></div>
             <div class="content-wrapper glass-panel split-layout reverse reveal">
                 <div class="text-block">
-                    <h2>2. Main Dashboard</h2>
-                    <p class="subtitle" style="margin-left: 0; text-align: left;">Centralizing your daily metrics and metabolic state.</p>
+                    <h2>2. Dr. Chama (Intelligence & Coaching)</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">Your virtual persona providing prescriptive metabolic insights.</p>
                     <ul class="text-list">
-                        <li><strong>Caloric Balance:</strong> Real-time display of calories consumed versus burned throughout the day.</li>
-                        <li><strong>Macronutrient Control:</strong> Precise progress bars for Protein, Carbohydrate, and Fat intake.</li>
-                        <li><strong>WHO Guidelines Monitoring:</strong> Proactive visual alerts for Sugar, Cholesterol, Processed Meats, and Additives intake.</li>
-                        <li><strong>Daily Deficit/Surplus:</strong> Dynamic calculation of what's left to hit your exact weight loss goal.</li>
-                        <li><strong>Automatic Syncing:</strong> Energy expenditure summary (Basal + Active) instantly integrated with Apple HealthKit.</li>
+                        <li><strong>Biological Context:</strong> The AI tutor automatically ingests your current biological context (e.g., HRV, sleep quality, current deficit).</li>
+                        <li><strong>Prescriptive Feedback:</strong> Receive actionable advice, like focusing on hydration or reducing deficit on low-HRV days to protect lean muscle mass.</li>
                     </ul>
                 </div>
-                <div class="image-block">
-                    <div class="device-mockup iphone-mockup showcase-mockup">
-                        <div class="dynamic-island"></div>
-                        <div class="screen carousel" id="carousel-dashboard" data-folder="assets/dashboard">
-                        </div>
-                    </div>
+                <div class="image-block" style="display: flex; justify-content: center; align-items: center;">
+                     <div class="icon-large" style="font-size: 8rem; margin: 0 auto; filter: drop-shadow(0 0 20px rgba(255, 100, 0, 0.4));">🔥</div>
                 </div>
             </div>
         </section>
 
-        <!-- MACRO 3: Tracking -->
-        <section id="tracking" class="macro-section parallax-bg-2">
+        <!-- MACRO 3: Logger -->
+        <section id="logger" class="macro-section parallax-bg-2">
             <div class="ambient-glow-circle circle-orange" style="top: 10%; left: 15%;"></div>
             <div class="ambient-glow-circle circle-purple" style="bottom: 10%; right: 15%;"></div>
             <div class="content-wrapper glass-panel split-layout reveal">
                 <div class="text-block">
-                    <h2>3. Logging & Tracking</h2>
-                    <p class="subtitle" style="margin-left: 0; text-align: left;">AI-optimized tools for zero-friction daily food logging.</p>
-                    <ul class="text-list">
-                        <li><strong>Quick Launch:</strong> Global action button (+) accessible in milliseconds from any screen.</li>
-                        <li><strong>Camera Recognition (Vision):</strong> Snap a picture of your plate and let Gemini Vision automatically calculate portions and macros.</li>
-                        <li><strong>Smart Voice Input:</strong> Just dictate your meal and the AI transforms natural speech into structured nutritional tables.</li>
-                        <li><strong>Barcode Scanner:</strong> Ultra-fast integrated scanner for packaged foods.</li>
-                        <li><strong>Biometric Workouts:</strong> AI cross-references your body data with the workout description to estimate caloric burn with mathematical precision.</li>
-                    </ul>
+                    <div class="icon-large">🎙️</div>
+                    <h2>3. Multimodal Logger & Search</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">Frictionless food insertions with powerful fallback AI architecture.</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>AI Fallback Architecture</h4>
+                            <p>Searches local cache first, then TACO (Unicamp) database, falling back to Llama AI for global portals, and Gemini for vision/audio extraction.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Top 5 Offenders</h4>
+                            <p>A scoreboard showing the 5 food families that brought the highest caloric load across a selected date range.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Mass Logging</h4>
+                            <p>Easily check "For all days in range" to perform batch insertions of a single food, ideal for meal-prep routines.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="image-block">
                     <div class="device-mockup iphone-mockup showcase-mockup">
                         <div class="dynamic-island"></div>
-                        <div class="screen carousel" id="carousel-tracking" data-folder="assets/tracking">
+                        <div class="screen carousel" id="carousel-logger" data-folder="assets/registrar">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MACRO 4: Journeys -->
-        <section id="journeys" class="macro-section parallax-bg-2">
+        <!-- MACRO 4: Ecosystem -->
+        <section id="ecosystem" class="macro-section parallax-bg-2">
             <div class="ambient-glow-circle circle-cyan" style="top: 20%; right: 10%;"></div>
             <div class="ambient-glow-circle circle-orange" style="bottom: 20%; left: 10%;"></div>
             <div class="content-wrapper glass-panel split-layout reverse reveal">
                 <div class="text-block">
-                    <div class="icon-large">⏳</div>
-                    <h2>4. Journeys (Gamification & Progression)</h2>
-                    <p class="subtitle" style="margin-left: 0; text-align: left;">Continuous sprints to track your long-term weight loss.</p>
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <h4>Active Cycle & Real Burn</h4>
-                            <p>Timer showing days and hours of the active sprint. Track Theoretical Fat Burn vs. Real Weight Loss on the scale, with precise evolution and deficit charts.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>History & Risk Metrics</h4>
-                            <p>Storage of past cycles with impressive aggregated reports (e.g., total sugar consumed in 30 days). Cards that evaluate your health risk based on continuous ultra-processed food consumption.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="image-block">
-                    <div class="device-mockup iphone-mockup showcase-mockup">
-                        <div class="dynamic-island"></div>
-                        <div class="screen carousel" id="carousel-journeys" data-folder="assets/journeys">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- MACRO 5: Settings -->
-        <section id="settings" class="macro-section parallax-bg-3">
-            <div class="ambient-glow-circle circle-purple" style="top: 10%; left: 20%;"></div>
-            <div class="ambient-glow-circle circle-cyan" style="bottom: 10%; right: 20%;"></div>
-            <div class="content-wrapper glass-panel split-layout reveal">
-                <div class="text-block">
-                    <div class="icon-large">⚙️</div>
-                    <h2>5. Settings & Biometric Profile</h2>
-                    <p class="subtitle" style="margin-left: 0; text-align: left;">The most advanced hyper-personalization of your physiological routine.</p>
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <h4>Integrated BMR</h4>
-                            <p>Native Basal Metabolic Rate calculator using the Mifflin-St Jeor equation based on your sex, weight, height, and age.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>Weight Loss Goals</h4>
-                            <p>Set exactly how many pounds you want to lose per month, and the system will dynamically adjust your daily deficit and protein multiplier.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>Customizable Limits</h4>
-                            <p>Absolute control to redefine tolerance margins for Sugar, Cholesterol, and Processed Meats according to medical recommendations.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="image-block">
-                    <div class="device-mockup iphone-mockup showcase-mockup">
-                        <div class="dynamic-island"></div>
-                        <div class="screen carousel" id="carousel-settings" data-folder="assets/settings">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- MACRO 6: Technology -->
-        <section id="tech" class="macro-section parallax-bg-3">
-            <div class="ambient-glow-circle circle-orange" style="top: 15%; right: 15%;"></div>
-            <div class="ambient-glow-circle circle-purple" style="bottom: 15%; left: 15%;"></div>
-            <div class="content-wrapper glass-panel split-layout reverse reveal">
-                <div class="text-block">
-                    <h2>6. Core Technology & Underlying Integrations</h2>
-                    <p class="subtitle" style="margin-left: 0; text-align: left;">The high-performance engine that powers the health ecosystem.</p>
+                    <h2>4. Ecosystem Extensions</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">Quick mirroring of your metabolism on iPhone and Apple Watch.</p>
                     <ul class="text-list">
-                        <li><strong>Native HealthKit:</strong> Native bidirectional communication with Apple's Health app to read and write weight, basal energy, and active energy.</li>
-                        <li><strong>Gemini 3.1 Flash Lite:</strong> The best and fastest generative AI emulating the app's nutritionist brain, abstracting complexity in conversations and images.</li>
-                        <li><strong>Firebase Firestore Backend:</strong> Serverless Realtime synchronization. Actions performed on your Watch instantly appear on your iPhone without manual refresh.</li>
+                        <li><strong>iOS Home & Lock Screen Widgets:</strong> Instantly check your Deficit Ring, Macros, and Burn Index through background Timeline updates.</li>
+                        <li><strong>Apple Watch Dashboard:</strong> Standalone wrist macro bars and the daily ring complications updated in the background.</li>
+                        <li><strong>Siri Quick Log:</strong> Dictate directly from your watch to log food effortlessly (e.g., "I ate a cheese bread").</li>
                     </ul>
                 </div>
                 <div class="image-block">
                     <div class="device-mockup watch-mockup showcase-watch">
                         <div class="crown"></div>
                         <div class="side-button"></div>
-                        <div class="screen carousel" id="carousel-tech" data-folder="assets/tech">
+                        <div class="screen carousel" id="carousel-ecosystem">
+                             <img src="assets/hero-watch.png" alt="Watch Mockup" class="active">
+                             <img src="assets/watch-slide1.png" alt="Watch Mockup 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACRO 5: Journeys -->
+        <section id="journeys" class="macro-section parallax-bg-3">
+            <div class="ambient-glow-circle circle-purple" style="top: 10%; left: 20%;"></div>
+            <div class="ambient-glow-circle circle-cyan" style="bottom: 10%; right: 20%;"></div>
+            <div class="content-wrapper glass-panel split-layout reveal">
+                <div class="text-block">
+                    <div class="icon-large">⏳</div>
+                    <h2>5. Journeys & Preventive Health</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">Custom parameterization of time frames to align caloric theory with reality.</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>Retroactive Start Date</h4>
+                            <p>Pull your actual starting weight from HealthKit by setting a journey to start in the past.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Theoretical vs Actual Burn</h4>
+                            <p>Visual chart comparing your Theoretical Accumulated Deficit against your Actual Weight Moving Average to dampen water retention distortions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-block">
+                    <div class="device-mockup iphone-mockup showcase-mockup">
+                        <div class="dynamic-island"></div>
+                        <div class="screen carousel" id="carousel-journeys" data-folder="assets/jornadas">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACRO 6: Settings & Onboarding -->
+        <section id="settings" class="macro-section parallax-bg-3">
+            <div class="ambient-glow-circle circle-orange" style="top: 15%; right: 15%;"></div>
+            <div class="ambient-glow-circle circle-purple" style="bottom: 15%; left: 15%;"></div>
+            <div class="content-wrapper glass-panel split-layout reverse reveal">
+                <div class="text-block">
+                    <h2>6. Settings & Endocrine Onboarding</h2>
+                    <p class="subtitle" style="margin-left: 0; text-align: left;">Endocrine predictive engine adjustments for safe weight loss.</p>
+                    <ul class="text-list">
+                        <li><strong>Metabolic Adaptation:</strong> The app detects Polycystic Ovary Syndrome (PCOS) or history of long diets during onboarding.</li>
+                        <li><strong>Safety Reducer:</strong> Automatically injects a 15% reducer over the standard Mifflin BMR to protect endocrine function.</li>
+                        <li><strong>Goal Locking:</strong> Prevents aggressive goals to minimize metabolic damage and rebound weight gain.</li>
+                    </ul>
+                </div>
+                <div class="image-block">
+                    <div class="device-mockup iphone-mockup showcase-mockup">
+                        <div class="dynamic-island"></div>
+                        <div class="screen carousel" id="carousel-settings" data-folder="assets/configuracoes">
                         </div>
                     </div>
                 </div>
@@ -485,14 +486,13 @@
         document.addEventListener("DOMContentLoaded", () => {
             setupStaticCarousel('hero-iphone-carousel', 3500);
             setupStaticCarousel('hero-watch-carousel', 4200);
+            setupStaticCarousel('carousel-ecosystem', 4200);
 
             const dynamicCarousels = [
-                'carousel-auth', 
                 'carousel-dashboard', 
-                'carousel-tracking', 
+                'carousel-logger', 
                 'carousel-journeys', 
-                'carousel-settings', 
-                'carousel-tech'
+                'carousel-settings'
             ];
             
             dynamicCarousels.forEach(id => loadImagesDynamically(id));
