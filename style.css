@@ -474,7 +474,7 @@ p {
     --scale: 1;
     width: 100%;
     max-width: 300px;
-    aspect-ratio: 876 / 1664;
+    aspect-ratio: 829 / 1557;
     height: auto;
 }
 
@@ -931,3 +931,5 @@ p {
     background-clip: padding-box;
 }
 
+
+.showcase-mockup .dynamic-island { display: none; }
