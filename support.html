@@ -23,6 +23,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="style.css?v=1.1">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { primaryColor: '#252525', primaryTextColor: '#fff', primaryBorderColor: '#333', lineColor: '#666', secondaryColor: '#1a1a1a', tertiaryColor: '#111' } });
+    </script>
     <style>
         .manual-container {
             padding-top: 8rem;
@@ -82,71 +86,196 @@
     </nav>
     <main class="manual-container">
         <div class="manual-content">
-            <h1>Technical Support: How2Burn</h1>
-            <p>Welcome to <strong>How2Burn</strong>! This step-by-step guide was created to help you make the most of all the app's features and achieve your health, weight loss, and metabolic control goals in a practical and intelligent way.</p>
+            <h1>User Manual: Functional and Technical System Document</h1>
+            <p><strong>Document Version:</strong> 1.6 (UML / Mermaid Syntax Fix)</p>
+            <p><strong>Objective:</strong> Comprehensively and highly-detailedly outline the functional requirements, non-functional requirements, business rules, calculation memories, and flows of the How2Burn ecosystem (iOS, WatchOS, Widgets, and Intelligence Engines), using native UML modeling (via flow, class, state, and sequence diagrams).</p>
 
-            <h2>1. Getting Started and Account Creation</h2>
-            <p>Before you start tracking your goals, you need an approved account.</p>
+            <h2>1. System Overview (Macro Features)</h2>
+            <p><strong>How2Burn</strong> is a cognitive weight-loss engine that orchestrates energy balance, metabolic quality, and behavioral aspects across multiple touchpoints.</p>
+            <ol>
+                <li><strong>Dynamic Dashboard:</strong> Real-time view of Deficit, Macros, Health Indices (Fat Loss Score), Biological Alerts, and Temporal Groupings.</li>
+                <li><strong>Log (Multimodal Logger):</strong> Insertion via Text, Vision (Gemini), NLP (Llama), TACO (Food Database), User History, and Mass Logs.</li>
+                <li><strong>Dr. Chama (AI Coach):</strong> The virtual persona that crosses data to provide prescriptive insights.</li>
+                <li><strong>Journeys:</strong> Customized parameterization of time frames to align caloric theory with actual weight.</li>
+                <li><strong>Apple Ecosystem (Watch & Widgets):</strong> Quick mirroring of metabolism on iPhone home screens and Apple Watch.</li>
+                <li><strong>Settings & Profile:</strong> Endocrine predictive engine adjustments and permissions.</li>
+            </ol>
+
+            <h2>2. Non-Functional Requirements (NFRs)</h2>
             <ul>
-                <li><strong>Registration:</strong> On the home screen, follow the secure registration flow.</li>
+                <li><strong>NFR001 - HealthKit Integration:</strong> Bidirectionally extract Steps, Sleep, HRV, Workouts, and Weight in the background.</li>
+                <li><strong>NFR002 - Privacy and LLMs:</strong> Queries to LLMs (Gemini, Llama) must transit <em>only</em> food data, masking the user ID.</li>
+                <li><strong>NFR003 - Analytical Performance:</strong> Graphical groupings with "Range > 1" (weekly/monthly) must calculate in less than 500ms via CoreData.</li>
+                <li><strong>NFR004 - UI/UX Haptic Feedback:</strong> Hitting limits, alerts, or confirmations trigger CoreHaptics responses.</li>
+                <li><strong>NFR005 - Offline Persistence and Sync:</strong> Offline-first support, except for direct AI requests. Widgets use Timeline Providers in the background.</li>
             </ul>
 
-            <h2>2. Understanding the Dashboard</h2>
-            <p>The Dashboard tab is the heart of the app. It's where you view how your day is going.</p>
+            <h2>3. Macro Feature 1: Dynamic Dashboard</h2>
+            <p><em>(Visual Ref: Screens/1.6.4/Painel/Painel_01.png to Painel_19.png)</em></p>
+            
+            <h3>3.1. Grouping by Date Ranges (> 1 Day)</h3>
+            <p>When selecting a wide period (e.g., 7 days):</p>
             <ul>
-                <li><strong>Overall Caloric Balance:</strong> At the top, you'll clearly see the difference between what you've eaten and what you've burned so far.</li>
-                <li><strong>Macronutrients:</strong> Track the progress bars for Protein, Carbohydrates, and Fats. The app helps you hit your protein goal without exceeding other macros.</li>
-                <li><strong>WHO Thermometer (Health Limits):</strong> How2Burn cares not only about your weight but your long-term health. Check the colored panels to see if your intake of Sugar, Cholesterol, Processed Meats, and Additives/Sweeteners is within World Health Organization limits.</li>
-                <li><strong>Daily Deficit:</strong> Shows the "cutoff mark". You'll know exactly how many calories are left (or exceeded) to hit your daily weight loss goal.</li>
+                <li>The dashboard aggregates data and the circular chart transmutes into an <strong>aggregated bar chart</strong>.</li>
+                <li>Clicking a bar displays a dynamic <strong>Tooltip</strong> crossing intake with the exact HRV of that day. <em>(Ref: Painel_04.png, Painel_10.png)</em></li>
             </ul>
 
-            <h2>3. How to Log Your Meals and Workouts (The + Button)</h2>
-            <p>Our priority is that you spend as little time as possible logging information. That's why we use Artificial Intelligence.</p>
-            <p><strong>How to log food quickly:</strong></p>
+            <h3>3.2. Critical Substances Analysis (Sugar and Cholesterol)</h3>
             <ul>
-                <li>Tap the large floating <strong>+</strong> button (Quick Launch), visible at the bottom of any screen.</li>
-                <li>Select <strong>Food</strong> and choose the current meal.</li>
-                <li>Choose how you want to input the food:
-                    <ul>
-                        <li>📸 <strong>Camera (via AI):</strong> Point at your plate and take a picture. Artificial Intelligence will guess the portions.</li>
-                        <li>🎙️ <strong>Voice (via AI):</strong> Tap the microphone and speak naturally.</li>
-                        <li>🔎 <strong>Barcode:</strong> For packaged products, simply scan the barcode.</li>
-                        <li>⌨️ <strong>Text/Search:</strong> Type manually or search your history.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p><strong>How to log Workouts and Weight:</strong></p>
-            <ul>
-                <li><strong>Workouts:</strong> On the + button, tap "Workout". Describe what you did. The AI will use your weight, age, and workout duration to give an exact number of calories burned.</li>
-                <li><strong>Weight:</strong> On the + button, tap "Weight" to update the scale.</li>
+                <li>The card triggers an alert for high Sugar/Cholesterol. <em>(Ref: Painel_05.png)</em></li>
+                <li><strong>Upon clicking:</strong> A Modal opens with technical details. Right below, the modal <strong>groups the offenders</strong>, sequentially listing the foods consumed today that caused the alert. <em>(Ref: Painel_11.png, Painel_12.png)</em></li>
             </ul>
 
-            <h2>4. The "Journeys" System (Focus Cycles)</h2>
-            <p>The Journeys tab is for tracking your progress through "sprints" (e.g., a 30- or 60-day diet cycle).</p>
+            <h3>3.3. Use Cases (UML Flowchart) and Calculation Memory</h3>
             <ul>
-                <li><strong>Starting a Cycle:</strong> On the Journeys screen, click play to start a new cycle.</li>
-                <li><strong>Tracking Results:</strong> During the journey, track the graphical comparison:
-                    <ul>
-                        <li><strong>Theoretical Burn:</strong> How many pounds you should have lost purely through the math of your daily caloric deficit.</li>
-                        <li><strong>Scale Loss:</strong> Your actual weight progress over the days.</li>
-                    </ul>
-                </li>
-                <li><strong>History:</strong> When you finish a cycle, it is saved to your archive with in-depth diet reports.</li>
+                <li><strong>Total Daily Energy Expenditure (TDEE):</strong> <code>TDEE = BMR + NEAT + EAT</code> (Mifflin-St Jeor + Dynamic Adjustments).</li>
+                <li><strong>Fat Loss Readiness (Burn Index):</strong> Score (0-100) based on Sleep (30%), Average HRV (40%), and Steps (30%).</li>
+            </ul>
+            <div class="mermaid">
+flowchart LR
+    Actor([User]) --> UC1(Change Date Range >1)
+    UC1 -.->|include| UC2(View Bar Aggregation)
+    Actor --> UC3(Check Daily Burn Index)
+    Actor --> UC4(View Offenders in Modal)
+            </div>
+
+            <h2>4. Macro Feature 2: Dr. Chama (Intelligence & Coaching)</h2>
+            <h3>4.1. Overview and Flow</h3>
+            <p><strong>Dr. Chama</strong> acts as the app's metabolic tutor with active health context.</p>
+            <ol>
+                <li>The user summons Dr. Chama in the app.</li>
+                <li>The system injects the biological context into the <em>Prompt</em> (E.g., "HRV 30ms, poor sleep, high deficit").</li>
+                <li>Dr. Chama returns a <strong>prescriptive feedback</strong>: "Your HRV dropped. Focus on hydration and avoid a high deficit today to protect lean mass."</li>
+            </ol>
+
+            <h2>5. Macro Feature 3: Logger and Search Engines</h2>
+            <p><em>(Visual Ref: Screens/1.6.4/Registrar/Registrar_01.png to Registrar_09.png)</em></p>
+            
+            <h3>5.1. Fallbacks and AI Architecture</h3>
+            <ol>
+                <li><strong>Local History:</strong> Ultra-fast cache search. <em>(Ref: Registrar_05.png)</em></li>
+                <li><strong>TACO Database:</strong> Audited National Food Table (Unicamp).</li>
+                <li><strong>Llama AI:</strong> Scours global portals (USDA, FatSecret) and returns formatted JSON.</li>
+                <li><strong>Gemini:</strong> Extraction by Photo or Audio. <em>(Ref: Registrar_04.png)</em></li>
+            </ol>
+
+            <h3>5.2. Expanded Range Logs Screen (> 1 Day)</h3>
+            <ul>
+                <li><strong>Top 5 Offenders:</strong> Shows a scoreboard with the 5 "Food Families" that brought the most calories in the long period.</li>
+                <li><strong>Mass Logging:</strong> Selecting a food allows checking "For all days in the range", triggering batch insertions in the database. <em>(Ref: Registrar_02.png)</em></li>
             </ul>
 
-            <h2>5. Adjusting Your Profile and Biometric Goals</h2>
-            <p>How2Burn is hyper-customizable. Access the Settings tab to align the app with your body.</p>
+            <h3>5.3. Activity Diagram (Search and Mass Logging)</h3>
+            <div class="mermaid">
+stateDiagram-v2
+    [*] --> LogScreen
+    LogScreen --> Range1Day : Range = Today
+    LogScreen --> LongRange : Range > 1 Day
+    
+    LongRange --> ShowTop5
+    LongRange --> MassLogging
+    MassLogging --> PropagateRange
+    PropagateRange --> [*]
+
+    Range1Day --> LocalSearch
+    LocalSearch --> TACOSearch : Not found
+    TACOSearch --> LlamaAI : Not found
+    LlamaAI --> ReturnMacros
+    ReturnMacros --> SaveLog
+    SaveLog --> [*]
+            </div>
+
+            <h2>6. Macro Feature 4: Ecosystem Extensions (Watch & Widgets)</h2>
+            <h3>6.1. iOS Widgets (Home Screen and Lock Screen)</h3>
             <ul>
-                <li><strong>Apple Watch Connection (HealthKit):</strong> Enable Health app sync. It's automatic and silent!</li>
-                <li><strong>Basal Metabolic Rate (BMR):</strong> In the "Metabolism" section, if you don't use an Apple Watch, tap "Calculate via Biometrics".</li>
-                <li><strong>Setting Your Weight Loss Goal:</strong> Slide the control to set how many pounds you want to lose per month.</li>
-                <li><strong>Extra Customization:</strong>
-                    <ul>
-                        <li>Change the Language (Portuguese, English, Spanish).</li>
-                        <li>Change the weight metric from Kg to Lbs.</li>
-                        <li>Manually alter daily caps for Sugar or Cholesterol.</li>
-                    </ul>
-                </li>
+                <li><strong>Home Screen Widgets:</strong> Display the Deficit "Ring", Macros, and Burn Index via Timeline updates.</li>
+                <li><strong>Lock Screen Widgets:</strong> Radial iPhone complications directly on the lock screen.</li>
+            </ul>
+
+            <h3>6.2. Apple Watch App (WatchOS)</h3>
+            <ul>
+                <li><strong>Wrist Dashboard:</strong> Daily Ring and standalone Macro bars.</li>
+                <li><strong>Quick Log:</strong> Buttons for dictation via Siri ("I ate a cheese bread").</li>
+                <li><strong>Complications (Watch Faces):</strong> Corner icons indicating real-time deficit status, with <em>background refreshes</em>.</li>
+            </ul>
+
+            <h2>7. Macro Feature 5: Journeys and Preventive Health</h2>
+            <p><em>(Visual Ref: Screens/1.6.4/Jornadas/Jornadas_01.png to Jornadas_04.png)</em></p>
+            
+            <h3>7.1. Journey Creation Flow</h3>
+            <p>The user defines a long-term interval (e.g., 90-day Project). <em>(Ref: Jornadas_02.png)</em></p>
+            <ul>
+                <li><strong>Retroactive Start Date:</strong> Allows the journey to start in the past.</li>
+                <li><strong>Starting Weight:</strong> Pulls actual weight from HealthKit on the exact start date.</li>
+                <li>On the chart, the App compares the <em>Theoretical Accumulated Deficit</em> against an <em>Actual Weight Moving Average</em> to dampen distortions. <em>(Ref: Jornadas_03.png)</em></li>
+            </ul>
+
+            <div class="mermaid">
+classDiagram
+    class User {
+      +String uuid
+      +List~CustomFood~ customFoods
+    }
+    class Journey {
+      +UUID id
+      +Date startDate
+      +Date endDate
+      +Double startWeight
+      +Double goalWeight
+      +getTheoreticalWeightLoss()
+      +getActualWeightLoss()
+    }
+    class DailyAggregate {
+      +Date date
+      +Double tdee
+      +Double ingestedCalories
+      +Double vfcScore
+      +Double weighIn
+    }
+    
+    User "1" *-- "many" Journey
+    Journey "1" *-- "many" DailyAggregate
+            </div>
+
+            <h2>8. Settings and Onboarding (Endocrine Conditions)</h2>
+            <p><em>(Visual Ref: Screens/1.6.4/Onboarding/Onboarding_01.png to Onboarding_10.png and Screens/1.6.4/Configuracoes/Configuracoes_01.png to Configuracoes_16.png)</em></p>
+            
+            <h3>8.1. Metabolic Adaptation</h3>
+            <ul>
+                <li>If the user reports <strong>PCOS (Polycystic Ovary Syndrome)</strong> or a history of <strong>Long Diets</strong>, the app injects a "Safety Reducer" (~15%) over the standard Mifflin BMR. <em>(Ref: Onboarding_07.png, Onboarding_08.png)</em> This prevents severe aggressions to the endocrine system and locks the maximum weight loss goal to prevent the rebound effect (regain).</li>
+            </ul>
+
+            <div class="mermaid">
+sequenceDiagram
+    participant U as User
+    participant APP as Onboarding
+    participant ENG as Predictive Engine
+
+    U->>APP: Fills Basic Data
+    APP->>U: Asks Hormonal History (PCOS/Thyroid)
+    U->>APP: Answers "PCOS"
+    
+    APP->>U: Asks about Long Diets
+    U->>APP: Confirms Goals
+    
+    APP->>ENG: Sends Biometric Data
+    Note over ENG: BMR based on Mifflin.<br/>15% reducer applied due to PCOS.
+    ENG-->>APP: Returns Adjusted BMR (Lower)
+    
+    APP->>U: Finishes Setup
+            </div>
+
+            <h2>9. Glossary of Terms</h2>
+            <ul>
+                <li><strong>Dr. Chama:</strong> Native AI Persona of the app with the user's clinical context.</li>
+                <li><strong>TDEE (Total Daily Energy Expenditure):</strong> Total Daily Expenditure (BMR + NEAT + EAT).</li>
+                <li><strong>HRV / VFC:</strong> Heart Rate Variability (stress level).</li>
+                <li><strong>TACO:</strong> Brazilian Table of Food Composition.</li>
+                <li><strong>LLM (Llama / Gemini):</strong> Artificial Intelligence models for semantic search, text extraction, and computer vision.</li>
+                <li><strong>Mass Logging:</strong> Simultaneous log of a food for multiple days at once (ideal for meal prep).</li>
+                <li><strong>Top 5 Offenders:</strong> Scoreboard displaying the 5 food groups that brought the highest caloric load within a date grouping.</li>
+                <li><strong>Moving Average:</strong> Visual statistic used in the Journeys chart to smooth out false weight gain peaks (water retention).</li>
+                <li><strong>WidgetKit / Complications:</strong> Apple tools to display the caloric ring on lock screens and watch faces.</li>
             </ul>
             
             <hr style="margin: 4rem 0 2rem; border: none; border-top: 1px solid var(--border-color);">
