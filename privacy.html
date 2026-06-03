@@ -38,16 +38,27 @@
     </style>
 </head>
 <body>
-    <nav class="clean-nav">
+        <nav class="clean-nav">
         <div class="nav-content">
             <a href="index.html" class="logo"><img src="assets/logo.png" alt="How2Burn Logo"> How2Burn</a>
             <div class="nav-links">
                 <a href="index.html#dashboard">Dashboard</a>
-                <a href="index.html#tracking">Tracking</a>
-                <a href="support.html">Support</a>
-                <a href="index.html#settings">Settings</a>
+                <a href="index.html#coach">Coach IA</a>
+                <a href="index.html#logger">Logger</a>
+                <a href="index.html#ecosystem">Ecossistema</a>
+                <a href="index.html#journeys">Jornadas</a>
+                <a href="index.html#settings">Configurações</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="support.html">Suporte</a>
+                <a href="terms.html">Termos</a>
+                <a href="privacy.html">Privacidade</a>
             </div>
-            <a href="index.html#waitlist" class="nav-button">Waitlist</a>
+            <a href="/app" class="nav-button">Download</a>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -107,5 +118,26 @@
             <p>&copy; 2026 How2Burn. Designed with a focus on health. <span class="site-version" style="opacity: 0.5; margin-left: 10px;">v.1.6.6</span></p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if(menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+                
+                // Close menu when a link is clicked
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
