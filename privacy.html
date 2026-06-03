@@ -38,27 +38,42 @@
     </style>
 </head>
 <body>
-        <nav class="clean-nav">
+            <nav class="clean-nav">
         <div class="nav-content">
             <a href="index.html" class="logo"><img src="assets/logo.png" alt="How2Burn Logo"> How2Burn</a>
+            
             <div class="nav-links">
-                <a href="index.html#dashboard">Dashboard</a>
-                <a href="index.html#coach">Coach IA</a>
-                <a href="index.html#logger">Logger</a>
-                <a href="index.html#ecosystem">Ecossistema</a>
-                <a href="index.html#journeys">Jornadas</a>
-                <a href="index.html#settings">Configurações</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="support.html">Suporte</a>
-                <a href="terms.html">Termos</a>
-                <a href="privacy.html">Privacidade</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Funcionalidades <span class="arrow">▾</span></button>
+                    <div class="dropdown-content">
+                        <a href="index.html#dashboard">Dashboard</a>
+                        <a href="index.html#coach">Coach IA</a>
+                        <a href="index.html#logger">Logger</a>
+                        <a href="index.html#ecosystem">Ecossistema</a>
+                        <a href="index.html#journeys">Jornadas</a>
+                        <a href="index.html#settings">Configurações</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Ajuda & Legal <span class="arrow">▾</span></button>
+                    <div class="dropdown-content">
+                        <a href="index.html#faq">FAQ</a>
+                        <a href="support.html">Suporte</a>
+                        <a href="terms.html">Termos de Uso</a>
+                        <a href="privacy.html">Privacidade</a>
+                    </div>
+                </div>
             </div>
-            <a href="/app" class="nav-button">Download</a>
-            <button class="menu-toggle" aria-label="Abrir menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            
+            <div class="nav-actions-group">
+                <a href="/app" class="nav-button">Download</a>
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
