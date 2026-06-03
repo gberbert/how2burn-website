@@ -41,13 +41,17 @@ Ao selecionar um período largo (ex: 7 dias):
 ### 3.3. Casos de Uso (UML Flowchart) e Memória de Cálculo
 
 - **Gasto Energético Diário Total (TDEE):** `TDEE = TMB + NEAT + EAT` (Mifflin-St Jeor + Ajustes Dinâmicos).
-- **Índice de Queima (Fat Loss Readiness):** Pontuação (0-100) baseada em Sono (30%), VFC Média (40%) e Passos (30%).
+- **Grupo de Biometria Metabólica:** Um ecossistema unificado contendo:
+  - **Burn Index (BI):** Indicador principal consolidado (0-100) refletindo a prontidão para oxidar gordura.
+  - **Daily Steps (DS):** Termogênese não associada a exercícios (NEAT).
+  - **Heart Rate Variability (HRV):** Medição de recuperação do Sistema Nervoso Autônomo.
+  - **Sleep Analysis (SA):** Análise de horas de sono, foco em GH e cortisol.
 
 ```mermaid
 flowchart LR
     Actor([Usuário]) --> UC1(Mudar Range de Data >1)
     UC1 -.->|include| UC2(Ver Agrupamento em Barras)
-    Actor --> UC3(Checar Índice de Queima Diário)
+    Actor --> UC3(Checar Burn Index (BI) Diário)
     Actor --> UC4(Ver Ofensores na Modal)
 ```
 
@@ -102,7 +106,7 @@ stateDiagram-v2
 ## 6. Macro Funcionalidade 4: Extensões do Ecossistema (Watch & Widgets)
 
 ### 6.1. Widgets do iOS (Home Screen e Lock Screen)
-- **Home Screen Widgets:** Exibem o "Ring" de Déficit, Macros e Índice de Queima via atualizações de Timeline.
+- **Home Screen Widgets:** Exibem o "Ring" de Déficit, Macros e Burn Index (BI) via atualizações de Timeline.
 - **Lock Screen Widgets:** Complicações radiais do iPhone diretamente na tela bloqueada.
 
 ### 6.2. Apple Watch App (WatchOS)

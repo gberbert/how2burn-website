@@ -1125,3 +1125,23 @@ p {
         display: none;
     }
 }
+
+/* Fix horizontal scroll caused by Mermaid diagrams or long text */
+.mermaid {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 15px;
+}
+.mermaid svg {
+    max-width: none !important;
+}
+.manual-content {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+@media (max-width: 768px) {
+    .manual-content h1 {
+        font-size: 1.8rem;
+    }
+}
